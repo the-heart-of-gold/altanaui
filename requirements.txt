@@ -1,15 +1,10 @@
-decorator==4.4.2
 hupper==1.10.2
-neo4j==4.2.1
-networkx==2.5
 PasteDeploy==2.1.1
 plaster==1.0
 plaster-pastedeploy==0.7
 pyramid==2.0
-pytz==2021.1
 translationstring==1.4
 venusian==3.0.0
-waitress==2.0.0
 WebOb==1.8.7
 zope.deprecation==4.4.0
 zope.interface==5.3.0
