@@ -21,3 +21,6 @@ coverage
 test
 *.sqlite
 /venv/
+.idea/
+.pytest_cache
+altanaui/development.ini
