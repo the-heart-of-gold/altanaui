@@ -23,9 +23,100 @@
 </div>
 
 <div>
-<h2>Company Context</h2>
-<h3>Buyers</h3>
-<ul>${company_context.buyers[0]}</ul>
+    <h2>Company Context</h2>
+    <h3>Data Sources</h3>
+    <table>
+        <tr tal:repeat="item data_sources">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Restrictions</h3>
+    <table>
+        <tr tal:repeat="item restrictions">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Risks</h3>
+    <table>
+        <tr tal:repeat="item risks">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <p>Number of records: ${company_context.number_records}</p>
+    <h3>Buyers</h3>
+    <table>
+        <tr tal:repeat="item company_context.buyers">
+            <td><a href="${request.route_url('company')}">${item}</a></td>
+        </tr>
+    </table>
+
+    <h3>Countries of Destination</h3>
+    <table>
+        <tr tal:repeat="item company_context.countries_of_destination">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Countries of Operation</h3>
+    <table>
+        <tr tal:repeat="item company_context.countries_of_operation">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Countries of Origin</h3>
+    <table>
+        <tr tal:repeat="item company_context.countries_of_origin">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>HS Traded</h3>
+    <table>
+        <tr tal:repeat="item company_context.hs_traded">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Industries</h3>
+    <table>
+        <tr tal:repeat="item company_context.industries">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Products Received</h3>
+    <table>
+        <tr tal:repeat="item company_context.products_received">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Products Sent</h3>
+    <table>
+        <tr tal:repeat="item company_context.products_sent">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Suppliers</h3>
+    <table>
+        <tr tal:repeat="item company_context.suppliers">
+            <td>${item}</td>
+        </tr>
+    </table>
+
+    <h3>Trading Partners</h3>
+    <table>
+        <tr tal:repeat="item company_context.trading_partners">
+            <td>${item}</td>
+        </tr>
+    </table>
+
 </div>
+
 </body>
 </html>

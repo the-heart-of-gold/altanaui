@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Altana NSSIF UI: ${name}</title>
+    <title>Altana NSSIF UI</title>
 </head>
 <body>
 
@@ -12,7 +12,14 @@
             href="${request.application_url}/logout">Logout</a>
 </div>
 
-<h1>Altana NSSIF UI ${name}</h1>
+<h1>Altana NSSIF UI</h1>
 <p>Visit <a href="${request.route_url('company')}">company</a></p>
+
+<table>
+    <tr tal:repeat="item Companies">
+        <td><a href="${request.route_url('company')}">${item}</a></td>
+    </tr>
+</table>
+
 </body>
 </html>

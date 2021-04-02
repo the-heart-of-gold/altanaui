@@ -1,3 +1,5 @@
+import json
+
 from pyramid.httpexceptions import HTTPFound
 from pyramid.security import (
     remember,
@@ -16,11 +18,6 @@ from .security import (
 )
 
 
-#@view_config(route_name='home', renderer='altanaui:templates/mytemplate.jinja2')
-#def my_view(request):
-#    return {'project': 'altanaui'}
-
-
 @view_defaults(renderer='altanaui:templates/home.pt')
 class AltanaViews:
     def __init__(self, request):
@@ -29,7 +26,9 @@ class AltanaViews:
 
     @view_config(route_name='home')
     def home(self):
-        return {'name': 'Home View'}
+        with open('static/data/20210319-semiconductor-companies.json', encoding='utf-8-sig') as company_file:
+            companies = json.load(company_file)
+        return companies
 
     @view_config(route_name='login', renderer='altanaui:templates/login.pt')
     @forbidden_view_config(renderer='altanaui:templates/login.pt')
