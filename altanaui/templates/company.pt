@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Altana Company</title>
+</head>
+<body>
+
+<div>
+    <a tal:condition="view.logged_in is None"
+            href="${request.application_url}/login">Log In</a>
+    <a tal:condition="view.logged_in is not None"
+            href="${request.application_url}/logout">Logout</a>
+</div>
+
+<h1>${company_name}</h1>
+<p>A page all about <a href="${request.route_url('company')}">${company_name}</a></p>
+<div>
+<table>
+<tr><th>Attribute</th><th>Value</th></tr>
+<tr><td>Company Name</td><td>${company_name}</td></tr>
+<tr><td>Altana Canonical ID</td><td>${altana_canon_id}</td></tr>
+</table>
+</div>
+
+<div>
+<h2>Company Context</h2>
+<h3>Buyers</h3>
+<ul>${company_context.buyers[0]}</ul>
+</div>
+</body>
+</html>

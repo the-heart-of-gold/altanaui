@@ -31,10 +31,6 @@ class AltanaViews:
     def home(self):
         return {'name': 'Home View'}
 
-    @view_config(route_name='hello', permission='edit')
-    def hello(self):
-        return {'name': 'Hello View'}
-
     @view_config(route_name='login', renderer='altanaui:templates/login.pt')
     @forbidden_view_config(renderer='altanaui:templates/login.pt')
     def login(self):

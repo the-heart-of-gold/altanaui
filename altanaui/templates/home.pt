@@ -13,6 +13,6 @@
 </div>
 
 <h1>Altana NSSIF UI ${name}</h1>
-<p>Visit <a href="${request.route_url('hello')}">hello</a></p>
+<p>Visit <a href="${request.route_url('company')}">company</a></p>
 </body>
 </html>
