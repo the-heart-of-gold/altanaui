@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>Altana Company</title>
+    <link rel="stylesheet"
+          href="${request.static_url('altanaui:static/theme.css') }"/>
 </head>
 <body>
 
@@ -13,7 +15,7 @@
 </div>
 
 <h1>${company_name}</h1>
-<p>A page all about <a href="${request.route_url('company')}">${company_name}</a></p>
+<p>A page all about <a  href="${request.route_url('company', altana_canon_id=altana_canon_id)}">${company_name}</a></p>
 <div>
 <table>
 <tr><th>Attribute</th><th>Value</th></tr>

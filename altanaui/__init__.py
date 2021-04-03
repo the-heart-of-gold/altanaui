@@ -10,6 +10,7 @@ def main(global_config, **settings):
         config.include('pyramid_chameleon')
         config.include('pyramid_jinja2')
         config.include('.routes')
+        config.add_static_view(name='static', path='altanaui:static')
         config.scan()
 
         config.set_security_policy(

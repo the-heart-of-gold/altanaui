@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>Altana NSSIF UI ${view.view_name} - ${page_title}</title>
+    <link rel="stylesheet"
+          href="${request.static_url('altanaui:static/theme.css') }"/>
 </head>
 <body>
 <h1>${view.view_name} - ${page_title}</h1>

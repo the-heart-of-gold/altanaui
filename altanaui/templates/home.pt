@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>Altana NSSIF UI</title>
+    <link rel="stylesheet"
+          href="${request.static_url('altanaui:static/theme.css') }"/>
 </head>
 <body>
 
@@ -12,12 +14,11 @@
             href="${request.application_url}/logout">Logout</a>
 </div>
 
-<h1>Altana NSSIF UI</h1>
-<p>Visit <a href="${request.route_url('company')}">company</a></p>
+<h1>UK Semiconductor Companies</h1>
 
 <table>
     <tr tal:repeat="item Companies">
-        <td><a href="${request.route_url('company')}">${item}</a></td>
+        <td>${item}, <a href="${request.route_url('match', company_name=item)}">potential match</a></td>
     </tr>
 </table>
 
