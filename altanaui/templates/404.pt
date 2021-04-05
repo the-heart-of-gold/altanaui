@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Altana NSSIF UI</title>
+    <link rel="stylesheet"
+          href="${request.static_url('altanaui:static/dark.css') }"/>
+</head>
+<body>
+
+<div>
+    <p>Not Found</p>
+</div>
+
+</body>
+</html>

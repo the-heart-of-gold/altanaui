@@ -3,7 +3,7 @@
 <head>
     <title>Altana NSSIF UI</title>
     <link rel="stylesheet"
-          href="${request.static_url('altanaui:static/theme.css') }"/>
+          href="${request.static_url('altanaui:static/dark.css') }"/>
 </head>
 <body>
 

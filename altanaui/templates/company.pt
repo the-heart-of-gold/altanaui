@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <title>Altana Company</title>
-    <link rel="stylesheet"
-          href="${request.static_url('altanaui:static/theme.css') }"/>
+    <link rel="stylesheet" href="${request.static_url('altanaui:static/dark.css') }"/>
 </head>
 <body>
 
@@ -16,105 +15,108 @@
 
 <h1>${company_name}</h1>
 <p>A page all about <a  href="${request.route_url('company', altana_canon_id=altana_canon_id)}">${company_name}</a></p>
-<div>
-<table>
-<tr><th>Attribute</th><th>Value</th></tr>
-<tr><td>Company Name</td><td>${company_name}</td></tr>
-<tr><td>Altana Canonical ID</td><td>${altana_canon_id}</td></tr>
-</table>
-</div>
+<p>Number of records: ${company_context.number_records}</p>
 
 <div>
-    <h2>Company Context</h2>
-    <h3>Data Sources</h3>
-    <table>
+    <h2>Data Sources</h2>
+    <table tal:condition="data_sources">
         <tr tal:repeat="item data_sources">
             <td>${item}</td>
         </tr>
     </table>
 
-    <h3>Restrictions</h3>
+    <h2>Restrictions</h2>
     <table>
         <tr tal:repeat="item restrictions">
             <td>${item}</td>
         </tr>
     </table>
 
-    <h3>Risks</h3>
+    <h2>Risks</h2>
     <table>
-        <tr tal:repeat="item risks">
-            <td>${item}</td>
+        <tr><th>Risk Score</th><th>Risk Type</th></tr>
+        <tr tal:repeat="row risks">
+            <td>${row.risk_score}</td>
+            <td>${row.risk_type}</td>
         </tr>
     </table>
 
-    <p>Number of records: ${company_context.number_records}</p>
-    <h3>Buyers</h3>
+    <h2>Buyers</h2>
     <table>
-        <tr tal:repeat="item company_context.buyers">
-            <td><a href="${request.route_url('company')}">${item}</a></td>
+        <tr tal:repeat="row company_context.buyers">
+            <td><a href="${request.route_url('company', altana_canon_id=row.altana_canon_id)}">${row.company_name}</a></td>
         </tr>
     </table>
 
-    <h3>Countries of Destination</h3>
+    <h2>Countries of Destination</h2>
     <table>
-        <tr tal:repeat="item company_context.countries_of_destination">
-            <td>${item}</td>
+        <tr><th>ISO-2 Code</th><th>Name</th><th>Official Name</th></tr>
+        <tr tal:repeat="row company_context.countries_of_destination">
+            <td>${row.alpha_2}</td>
+            <td>${row.name}</td>
+            <td>${row.official_name}</td>
         </tr>
     </table>
 
-    <h3>Countries of Operation</h3>
+    <h2>Countries of Operation</h2>
     <table>
-        <tr tal:repeat="item company_context.countries_of_operation">
-            <td>${item}</td>
+        <tr><th>ISO-2 Code</th><th>Name</th><th>Official Name</th></tr>
+        <tr tal:repeat="row company_context.countries_of_operation">
+            <td>${row.alpha_2}</td>
+            <td>${row.name}</td>
+            <td>${row.official_name}</td>
         </tr>
     </table>
 
-    <h3>Countries of Origin</h3>
+    <h2>Countries of Origin</h2>
     <table>
-        <tr tal:repeat="item company_context.countries_of_origin">
-            <td>${item}</td>
+        <tr><th>ISO-2 Code</th><th>Name</th><th>Official Name</th></tr>
+        <tr tal:repeat="row company_context.countries_of_origin">
+            <td>${row.alpha_2}</td>
+            <td>${row.name}</td>
+            <td>${row.official_name}</td>
         </tr>
     </table>
 
-    <h3>HS Traded</h3>
+    <h2>HS Traded</h2>
     <table>
         <tr tal:repeat="item company_context.hs_traded">
             <td>${item}</td>
         </tr>
     </table>
 
-    <h3>Industries</h3>
+    <h2>Industries</h2>
     <table>
         <tr tal:repeat="item company_context.industries">
             <td>${item}</td>
         </tr>
     </table>
 
-    <h3>Products Received</h3>
+    <h2>Products Received</h2>
     <table>
-        <tr tal:repeat="item company_context.products_received">
-            <td>${item}</td>
+        <tr tal:repeat="row company_context.products_received">
+            <td><a href='/product/id/${row.product_id}'>${row.product_name}</a></td>
         </tr>
     </table>
 
-    <h3>Products Sent</h3>
+    <h2>Products Sent</h2>
     <table>
-        <tr tal:repeat="item company_context.products_sent">
-            <td>${item}</td>
+        <tr tal:repeat="row company_context.products_sent">
+            <td><a href='/product/id/${row.product_id}'>${row.product_name}</a></td>
         </tr>
     </table>
 
-    <h3>Suppliers</h3>
+    <h2>Suppliers</h2>
     <table>
-        <tr tal:repeat="item company_context.suppliers">
-            <td>${item}</td>
+        <tr tal:repeat="row company_context.suppliers">
+            <td><a href="${request.route_url('company', altana_canon_id=row.altana_canon_id)}">${row.company_name}</a></td>
         </tr>
     </table>
 
-    <h3>Trading Partners</h3>
+    <h2>Trading Partners</h2>
     <table>
-        <tr tal:repeat="item company_context.trading_partners">
-            <td>${item}</td>
+        <tr tal:repeat="row company_context.trading_partners">
+            <td><a href="${request.route_url('company', altana_canon_id=row.altana_canon_id)}">${row.company_name}</a></td>
         </tr>
     </table>
 
